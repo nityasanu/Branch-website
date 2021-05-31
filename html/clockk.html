@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		function startTime()
+		{
+			var today = new Date();
+          var h = today.getHours();
+          var m = today.getMinutes();
+          var s = today.getSeconds(); 
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+          var t = setTimeout(startTime,500);
+
+
+		}
+		function checkTime(i) {
+			if(i<10) {i = "0" + i };//add zero in front of numbers <10
+			return i;
+		}
+	</script>
+	<style type="text/css">
+		#txt {
+			text-align: center;
+			font-weight: bolder;
+			text-shadow: 2px 2px red;
+			border: 4px;
+		}
+	</style>
+	<title></title>
+</head>
+<body onload="startTime()">
+	<h1>
+	<div id="txt" align="center">
+		</h1>
+	</div>
+
+</body>
+
+</html>
